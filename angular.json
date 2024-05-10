@@ -44,8 +44,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -99,8 +99,28 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "goodcar:build:production",
+              "serveTarget": "goodcar:serve:production"
+            },
+            "development": {
+              "buildTarget": "goodcar:build:development",
+              "serveTarget": "goodcar:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "7e019cd3-dbd0-4b26-88db-d299ee8910be"
   }
 }

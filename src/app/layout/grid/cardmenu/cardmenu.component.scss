@@ -1,0 +1,30 @@
+.all{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 8px;
+}
+.card{
+    background-color: #25364c;
+    border-radius: 4px;
+    width: 296px;
+    height: 306px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 4px;
+    gap: 100px;
+    label{
+        font-size: 26px;
+        color: white;
+    }
+    img{
+        width: 96px;
+        filter: brightness(0) invert(1);
+    }
+}
+.card:hover{
+    cursor: pointer;
+}

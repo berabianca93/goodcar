@@ -1,0 +1,6 @@
+<div class="all">
+    <div (click)="navigateTo('/'+item.link)" *ngFor="let item of cards" class="card">
+        <label >{{item.nome}}</label>
+        <img [src]="item.image" alt="">
+    </div>
+</div>

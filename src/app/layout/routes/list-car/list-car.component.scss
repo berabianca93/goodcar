@@ -1,0 +1,59 @@
+
+.all{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 16px;
+    gap: 16px;
+}
+.list-box{
+    width: 100%;
+    height: 500px;
+    border: 1px solid #000;
+}
+.content-box{
+    width: 100%;
+    height: 500px;
+    border: 1px solid #000;
+}
+.line{
+    padding: 6px;
+    img{
+        width: 50px;
+    }
+    hr{
+        margin: 0px;
+    }
+}
+.in-line{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 8px;
+}
+.in-line-head{
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold;
+}
+.include{
+    padding: 6px;
+}
+.fields{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 6px;
+}
+.buy{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 6px;
+}
+.sell{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 6px;
+}

@@ -1,0 +1,118 @@
+<div class="all">
+    <div class="content-box">
+        <div class="include">
+            <h4>Incluir Veículo:</h4>
+            <div class="fields">
+                <div class="input">
+                    Veículo
+                    <input type="text" [(ngModel)]="modelo">
+                </div>
+                <div class="input">
+                    Modelo
+                    <input type="text" [(ngModel)]="modelo">
+                </div>
+                <div class="input">
+                    Placa
+                    <input type="text" [(ngModel)]="placa">
+                </div>
+                <div class="input">
+                    Valor &nbsp;
+                    <input type="text" [(ngModel)]="valor">
+                </div>
+                <div class="input">
+                    Negociado
+                    <select name="" id="" [(ngModel)]="negociado">
+                        <option [value]="false">Não negociado</option>
+                        <option [value]="true">Negociado</option>
+                    </select>
+                </div>
+                <div class="button">
+                    <button (click)="insertCar()">Incluir</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="buy">
+            <h4>Comprar Veículo:</h4>
+            <div class="fields">
+                <div class="input">
+                    Veículo
+                    <input type="text">
+                </div>
+                <div class="input">
+                    Modelo
+                    <input type="text">
+                </div>
+                <div class="input">
+                    Placa
+                    <input type="text">
+                </div>
+                <div class="input">
+                    Valor &nbsp;
+                    <input type="text">
+                </div>
+                <div class="input">
+                    Negociado
+                    <select name="" id="">
+                        <option [value]="false">Não negociado</option>
+                        <option [value]="true">Negociado</option>
+                    </select>
+                </div>
+                <div class="button">
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="sell">
+            <h4>Vender Veículo:</h4>
+            <div class="fields">
+                Selecione o veículo:
+                <div>
+                    <select>
+                        <ng-container *ngFor="let i of item$ | async">
+                            <option [ngValue]="i" *ngIf="!i.negociado">{{i.modelo}} | {{i.placa}}</option>
+                        </ng-container>
+                    </select>
+                </div>
+
+                Selecione o cliente:
+                <select name="" id="">
+                    <option value="">Maria Betania</option>
+                </select>
+                <button>Fechar negócio</button>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="list-box">
+        <div class="line">
+            <div class="in-line-head">
+                <label>Cliente</label>
+                <label>|</label>
+                <label>Modelo</label>
+                <label>|</label>
+                <label>Placa</label>
+                <label>|</label>
+                <label>Valor</label>
+                <label>|</label>
+                <label>Negociação</label>
+            </div>
+            <hr>
+            <div *ngFor="let i of item$ | async">
+                <div class="in-line">
+                    <label>{{i.cliente == '' ? 'Não possui' : i.cliente}}</label>
+                    <label></label>
+                    <label>{{i.modelo}}</label>
+                    <label></label>
+                    <label>{{i.placa}}</label>
+                    <label></label>
+                    <label>{{i.valor | currency}}</label>
+                    <label></label>
+                    <label>{{i.negociado == false ? 'não negociado' : 'negociado'}}</label>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
